@@ -1,0 +1,552 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>PCB | 半截诗の小屋</title><meta name="author" content="半截诗"><meta name="copyright" content="半截诗"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="PCB Technique​	本篇课程基于B站UP主Expert电子实验室的教学视频，同时加上本人思考与总结汇总而成。 ​	零基础入门PCB设计保姆级教学 ​	Expert电子实验室 ​	本部分笔记为扫盲篇（基础篇） &#x3D;&#x3D;进阶需实战，纸上得来终觉浅，绝知此事要躬行。&#x3D;&#x3D;​	 1. 电路设计1.1 原理图四要素 元件符号 连接线 结点 注释  1.2 基本原件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PCB">
+<meta property="og:url" content="http://anthony-hcy.github.io/2024/07/01/PCB/index.html">
+<meta property="og:site_name" content="半截诗の小屋">
+<meta property="og:description" content="PCB Technique​	本篇课程基于B站UP主Expert电子实验室的教学视频，同时加上本人思考与总结汇总而成。 ​	零基础入门PCB设计保姆级教学 ​	Expert电子实验室 ​	本部分笔记为扫盲篇（基础篇） &#x3D;&#x3D;进阶需实战，纸上得来终觉浅，绝知此事要躬行。&#x3D;&#x3D;​	 1. 电路设计1.1 原理图四要素 元件符号 连接线 结点 注释  1.2 基本原件">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://4kwallpapers.com/images/walls/thumbs_3t/17166.jpg">
+<meta property="article:published_time" content="2024-07-01T05:01:00.000Z">
+<meta property="article:modified_time" content="2024-07-01T05:02:00.000Z">
+<meta property="article:author" content="半截诗">
+<meta property="article:tag" content="电子设计">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://4kwallpapers.com/images/walls/thumbs_3t/17166.jpg"><link rel="shortcut icon" href="https://tuchuang.voooe.cn/images/2024/07/01/R-C.jpg"><link rel="canonical" href="http://anthony-hcy.github.io/2024/07/01/PCB/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 半截诗","link":"链接: ","source":"来源: 半截诗の小屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'PCB',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-01 13:02:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 8 || hour >= 22
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/cat.css"><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><link rel="stylesheet" href="/css/progress_bar.css" media="defer" onload="this.media='all'"><script async src="/js/console.js"></script><span id="fps"></span><div id="myscoll"></div><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/1.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw icon-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw icon--article"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw icon-guidang1"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw icon-sekuaibiaoqian"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw icon-fenlei"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw icon-pinweishenghuo"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/life/music/"><i class="fa-fw icon-yinle"></i><span> 八音盒</span></a></li><li><a class="site-page child" href="/life/movies/"><i class="fa-fw icon-dianying1"></i><span> 电影院</span></a></li><li><a class="site-page child" href="/life/games/"><i class="fa-fw icon-youxishoubing"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw icon-xiangzi"></i><span> 八宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/box/gallery/"><i class="fa-fw icon-tubiaozhizuomoban"></i><span> 画廊</span></a></li><li><a class="site-page child" href="/box/animation/"><i class="fa-fw icon-nvwumao"></i><span> 动画</span></a></li><li><a class="site-page child" href="/box/nav/"><i class="fa-fw icon-zhifengche"></i><span> 网址导航</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw icon-shejiaoxinxi"></i><span> 社交</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/social/fcircle/"><i class="fa-fw icon-pengyouquan"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/comments/"><i class="fa-fw icon-liuyan"></i><span> 留言板</span></a></li><li><a class="site-page child" href="/social/link/"><i class="fa-fw icon-lianjie"></i><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw icon-wangye"></i><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/site/census/"><i class="fa-fw icon--tongjibiao"></i><span> 网站统计</span></a></li><li><a class="site-page child" href="/site/echarts/"><i class="fa-fw icon-shujutongji1"></i><span> 文章统计</span></a></li><li><a class="site-page child" href="/site/time/"><i class="fa-fw icon-xianxingshalou"></i><span> 旧时光</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw icon-maoliang"></i><span> 个人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/personal/bb/"><i class="fa-fw icon-qunliaotian"></i><span> 唠叨</span></a></li><li><a class="site-page child" href="/personal/love/"><i class="fa-fw icon-love-sign"></i><span> 恋爱小屋</span></a></li><li><a class="site-page child" href="/personal/about/"><i class="fa-fw icon-paperplane"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/17166.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="半截诗の小屋"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang.voooe.cn/images/2024/07/01/R-C.jpg"/><span class="site-name">半截诗の小屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw icon-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw icon--article"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw icon-guidang1"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw icon-sekuaibiaoqian"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw icon-fenlei"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw icon-pinweishenghuo"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/life/music/"><i class="fa-fw icon-yinle"></i><span> 八音盒</span></a></li><li><a class="site-page child" href="/life/movies/"><i class="fa-fw icon-dianying1"></i><span> 电影院</span></a></li><li><a class="site-page child" href="/life/games/"><i class="fa-fw icon-youxishoubing"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw icon-xiangzi"></i><span> 八宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/box/gallery/"><i class="fa-fw icon-tubiaozhizuomoban"></i><span> 画廊</span></a></li><li><a class="site-page child" href="/box/animation/"><i class="fa-fw icon-nvwumao"></i><span> 动画</span></a></li><li><a class="site-page child" href="/box/nav/"><i class="fa-fw icon-zhifengche"></i><span> 网址导航</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw icon-shejiaoxinxi"></i><span> 社交</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/social/fcircle/"><i class="fa-fw icon-pengyouquan"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/comments/"><i class="fa-fw icon-liuyan"></i><span> 留言板</span></a></li><li><a class="site-page child" href="/social/link/"><i class="fa-fw icon-lianjie"></i><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw icon-wangye"></i><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/site/census/"><i class="fa-fw icon--tongjibiao"></i><span> 网站统计</span></a></li><li><a class="site-page child" href="/site/echarts/"><i class="fa-fw icon-shujutongji1"></i><span> 文章统计</span></a></li><li><a class="site-page child" href="/site/time/"><i class="fa-fw icon-xianxingshalou"></i><span> 旧时光</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw icon-maoliang"></i><span> 个人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/personal/bb/"><i class="fa-fw icon-qunliaotian"></i><span> 唠叨</span></a></li><li><a class="site-page child" href="/personal/love/"><i class="fa-fw icon-love-sign"></i><span> 恋爱小屋</span></a></li><li><a class="site-page child" href="/personal/about/"><i class="fa-fw icon-paperplane"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">PCB</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-01T05:01:00.000Z" title="发表于 2024-07-01 13:01:00">2024-07-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-01T05:02:00.000Z" title="更新于 2024-07-01 13:02:00">2024-07-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="PCB"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="PCB-Technique"><a href="#PCB-Technique" class="headerlink" title="PCB Technique"></a>PCB Technique</h1><p>​	本篇课程基于B站UP主<code>Expert电子实验室</code>的教学视频，同时加上本人思考与总结汇总而成。</p>
+<p>​	<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1At421h7Ui/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&vd_source=c33a47a3f08b3b6b6c1614d37f34903f">零基础入门PCB设计保姆级教学</a></p>
+<p>​	<a target="_blank" rel="noopener" href="https://space.bilibili.com/346179450">Expert电子实验室</a></p>
+<p>​	本部分笔记为扫盲篇（基础篇）</p>
+<h6 id="进阶需实战，纸上得来终觉浅，绝知此事要躬行。"><a href="#进阶需实战，纸上得来终觉浅，绝知此事要躬行。" class="headerlink" title="&#x3D;&#x3D;进阶需实战，纸上得来终觉浅，绝知此事要躬行。&#x3D;&#x3D;"></a>&#x3D;&#x3D;进阶需实战，纸上得来终觉浅，绝知此事要躬行。&#x3D;&#x3D;</h6><p>​	</p>
+<h2 id="1-电路设计"><a href="#1-电路设计" class="headerlink" title="1. 电路设计"></a>1. 电路设计</h2><h2 id="1-1-原理图四要素"><a href="#1-1-原理图四要素" class="headerlink" title="1.1 原理图四要素"></a>1.1 原理图四要素</h2><ol>
+<li>元件符号</li>
+<li>连接线</li>
+<li>结点</li>
+<li>注释</li>
+</ol>
+<h2 id="1-2-基本原件介绍"><a href="#1-2-基本原件介绍" class="headerlink" title="1.2 基本原件介绍"></a>1.2 基本原件介绍</h2><h3 id="1-2-1-电阻"><a href="#1-2-1-电阻" class="headerlink" title="1.2.1 电阻"></a>1.2.1 电阻</h3><ul>
+<li>对于贴片电阻的读数</li>
+</ul>
+<blockquote>
+<p>1）3位读数：前2位为有效数字，第3位表示10的n次幂(也可以理解为0的个数)。精度为±5%</p>
+<p>2）4位读数：前3位为有效数字，第4位表示10的n次幂(也可以理解为0的个数)。读法和3位的原理一样，精度为±1%</p>
+<p>3）阻值小于10的读数：通常在两个数之间插入一个字母R，用字母R来代替小数点</p>
+</blockquote>
+<h3 id="1-2-2-电容"><a href="#1-2-2-电容" class="headerlink" title="1.2.2 电容"></a>1.2.2 电容</h3><ul>
+<li><p>主要功能：<strong>储能和滤波</strong></p>
+</li>
+<li><p>单位计算</p>
+</li>
+</ul>
+<p><code>1uF=1000nF；1nF=1000pF</code></p>
+<ul>
+<li>分类</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/capacityType.png" alt="Type"></p>
+<ul>
+<li>读数以及含义</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%872.png" alt="Type—1"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%873.png" alt="Type—2"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%874.png" alt="Type—3"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%875.png" alt="Type—4"></p>
+<h3 id="1-2-3-电感"><a href="#1-2-3-电感" class="headerlink" title="1.2.3 电感"></a>1.2.3 电感</h3><p>​	Inductor，</p>
+<ul>
+<li>单位换算</li>
+</ul>
+<p><code>1H=1000mH；1mH=1000uH；</code></p>
+<ul>
+<li>主要功能：滤波，扼流，谐振，储能</li>
+<li>分类</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%876.png" alt="Inductors"></p>
+<ul>
+<li>读数以及含义</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%877.png" alt="Type—1"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%878.png" alt="Type—2"></p>
+<h3 id="1-2-4-二极管"><a href="#1-2-4-二极管" class="headerlink" title="1.2.4 二极管"></a>1.2.4 二极管</h3><ul>
+<li>主要功能</li>
+</ul>
+<p>​	实现对交流电整流、对调制信号检波、限幅和钳位以及对电源电压的稳压等多种功能 。</p>
+<ul>
+<li>分类以及简单介绍</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E4%BA%8C%E6%9E%81%E7%AE%A1%E5%88%86%E7%B1%BB.png" alt="二极管种类以及介绍"></p>
+<ul>
+<li>外观（判断正负极）</li>
+</ul>
+<ol>
+<li>对于直插式发光二极管：长脚为正极，内部小块为正极。</li>
+<li>一般封装类型的正负极判断</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%879.png" alt="二极管一般封装类型的正负极判断"></p>
+<h3 id="1-2-5-三极管"><a href="#1-2-5-三极管" class="headerlink" title="1.2.5 三极管"></a>1.2.5 三极管</h3><ul>
+<li><p>分类：NPN（控地） 和 PNP（控电源）</p>
+</li>
+<li><p>工作状态</p>
+</li>
+</ul>
+<ol>
+<li>截止状态</li>
+</ol>
+<p>​	发射结反偏，集电结反偏。即：I ce&#x3D;0</p>
+<ol start="2">
+<li>放大状态</li>
+</ol>
+<p>​	发射结正偏，集电结反偏。</p>
+<ol start="3">
+<li><p>饱和状态</p>
+<p> 发射结正偏，集电结正偏</p>
+</li>
+</ol>
+<ul>
+<li>常见封装</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%8710.png" alt="三极管一般封装类型"></p>
+<h3 id="1-2-6-场效应管（尚未掌握）"><a href="#1-2-6-场效应管（尚未掌握）" class="headerlink" title="1.2.6 场效应管（尚未掌握）"></a>1.2.6 场效应管（尚未掌握）</h3><ul>
+<li>基本介绍</li>
+</ul>
+<p>​	场效应晶体管（Field Effect Transistor缩写(FET)）简称场效应管。它是利用控制输入回路的电场效应来控制输出回路电流的一种半导体器件。</p>
+<ul>
+<li>特点</li>
+</ul>
+<p>​	具有输入电阻高、噪声小、功耗低、动态范围大、易于集成、没有二次击穿现象、安全工作区域宽等优点。</p>
+<ul>
+<li>类型</li>
+</ul>
+<ol>
+<li><p>结型场效应管（junction FET—JFET) </p>
+</li>
+<li><p>金属 - 氧化物半导体场效应管（metal-oxide semiconductor FET，简称MOS-FET）</p>
+</li>
+</ol>
+<ul>
+<li>与三极管的对比</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%8711.png" alt="compare"></p>
+<ul>
+<li>封装</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/MOS.png" alt="MOS"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%8712.png" alt="MOS"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%8713.png" alt="MOS"></p>
+<h3 id="1-2-7-芯片-IC"><a href="#1-2-7-芯片-IC" class="headerlink" title="1.2.7 芯片 &#x2F; IC"></a>1.2.7 芯片 &#x2F; IC</h3><p><strong>&#x3D;&#x3D;具体见数据手册&#x3D;&#x3D;</strong></p>
+<h2 id="1-3-数据手册"><a href="#1-3-数据手册" class="headerlink" title="1.3 数据手册"></a>1.3 数据手册</h2><p>自己找去</p>
+<h2 id="1-4-电路原理图设计"><a href="#1-4-电路原理图设计" class="headerlink" title="1.4 电路原理图设计"></a>1.4 电路原理图设计</h2><h3 id="网络标签"><a href="#网络标签" class="headerlink" title="网络标签"></a>网络标签</h3><p>​	网络标签 (Net Label)：网络标号表示一个电器连接点，具有相同网络标号的器件表明是电气连接在一起。</p>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><blockquote>
+<ol>
+<li><p>分模块、分图页</p>
+</li>
+<li><p>标注重要参数</p>
+</li>
+<li><p>标注元件特殊&#x2F;重要功能</p>
+</li>
+<li><p>标注注意事项</p>
+</li>
+<li><p>合理的网络标签</p>
+</li>
+<li><p>标注LOGO&#x2F;版本号</p>
+</li>
+</ol>
+</blockquote>
+<p>&#x3D;&#x3D;<strong>成功的原理图设计&#x3D;合理的元件选型+正确的电路设计</strong>&#x3D;&#x3D;</p>
+<h2 id="2-PCB设计"><a href="#2-PCB设计" class="headerlink" title="2. PCB设计"></a>2. PCB设计</h2><ul>
+<li>PCB基本介绍</li>
+</ul>
+<blockquote>
+<p>​	PCB板就是印制电路板，又称印刷电路板，是电子元器件电气连接的提供者。PCB根据其基板材料的不同而不同，高频微波板、金属基板，铝基板、铁基板、铜基板、双面板及多层板PCB是英文Printed Circuit Board的缩写，中文名称为印制电路板，又称印刷电路板、印刷线路板，是重要的电子部件。</p>
+</blockquote>
+<h3 id="2-1PCB-组成"><a href="#2-1PCB-组成" class="headerlink" title="2.1PCB 组成"></a>2.1PCB 组成</h3><h4 id="2-1-1铺铜"><a href="#2-1-1铺铜" class="headerlink" title="2.1.1铺铜"></a>2.1.1铺铜</h4><ul>
+<li>作用</li>
+</ul>
+<p>​	将PCB上闲置的空间作为基准面，然后用固体铜填充，这些铜区又称为灌铜。覆铜的意义在于，减小地线阻抗，提高抗干扰能力；降低压降，提高电源效率；与地线相连，还可以减小环路面积。</p>
+<ul>
+<li>方式</li>
+</ul>
+<ol>
+<li>大面积覆铜</li>
+</ol>
+<p>​	大面积覆铜，具备了加大电流和屏蔽双重作用，但是大面积覆铜，如果过波峰焊时，板子就可能会翘起来，甚至会起泡。因此大面积覆铜，一般也会开几个槽，缓解铜箔起泡。低频电路、有大电流的电路等常用大面积的覆铜。</p>
+<ol>
+<li>网格覆铜</li>
+</ol>
+<p>从散热的角度说，它降低了铜的受热面，又起到了一定的电磁屏蔽的作用。因此，高频电路对抗干扰要求高的多用网格覆铜</p>
+<h4 id="2-1-2过孔"><a href="#2-1-2过孔" class="headerlink" title="2.1.2过孔"></a>2.1.2过孔</h4><ul>
+<li>功能</li>
+</ul>
+<ol>
+<li>电气连接：过孔用于将不同层面的电路连接起来，使得电路板能够在不同的层次上进行有效的信号和电源传输。</li>
+<li>器件固定或定位：过孔还可以用作固定电子部件的位置，如电阻、电容等，确保其在电路板上的正确布局。</li>
+</ol>
+<ul>
+<li>分类</li>
+</ul>
+<ol>
+<li>通孔：从PCB的上层钻到底层的机械钻孔。</li>
+<li>盲孔：从 PCB 的上层或底层到内层钻孔和电镀的孔。</li>
+<li>埋孔：指位于印刷线路板内层的连接孔，它不会延伸到线路板的表面。</li>
+</ol>
+<h4 id="2-1-3焊盘"><a href="#2-1-3焊盘" class="headerlink" title="2.1.3焊盘"></a>2.1.3焊盘</h4><ul>
+<li>定义：</li>
+</ul>
+<p>​	元件通过PCB上的引线孔，用焊锡焊接固定在PCB上，印制导线把焊盘连接起来，实现元件在电路中的电气连接。引线孔及周围的铜箔称为焊盘。</p>
+<h4 id="2-1-4丝印"><a href="#2-1-4丝印" class="headerlink" title="2.1.4丝印"></a>2.1.4丝印</h4><p>​	PCB丝印是指在电子线路板（Printed Circuit Board）上印刷的信息，如文字、标志、图形等。这些丝印具有重要的功能，它们可以帮助标识电子元件的位置、数值、型号等信息，以及元件的方向和正确的安装方式。</p>
+<h4 id="2-1-5阻焊"><a href="#2-1-5阻焊" class="headerlink" title="2.1.5阻焊"></a>2.1.5阻焊</h4><p>​	在铜层上面覆盖油墨层，油墨层覆盖住铜层上面不需要焊接的线路，防止PCB上的线路和其他的金属、焊锡或者其它的导电物体接触导致短路，起到绝缘及保护铜层作用，选择性露出焊接需要的铜PAD、IC等。</p>
+<h3 id="2-2PCB结构"><a href="#2-2PCB结构" class="headerlink" title="2.2PCB结构"></a>2.2PCB结构</h3><ul>
+<li>叠层结构</li>
+</ul>
+<p>​	PCB材料的组成主要有PP半固态片和Core芯板两部分组成，这就构成了所看到的绿色、红色或者黑色等的板子，再加上敷铜线路层，器件，就构成了电路板。</p>
+<ul>
+<li>&#x3D;&#x3D;叠层结构布局有讲究&#x3D;&#x3D;，但是一般的二层板双面都可能需要走底地线和电源。</li>
+<li>图示</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%8714.png" alt="PCB叠层结构"></p>
+<h3 id="2-3-PCB设计流程"><a href="#2-3-PCB设计流程" class="headerlink" title="2.3  PCB设计流程"></a>2.3  PCB设计流程</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/PCB/%E5%9B%BE%E7%89%8715.png" alt="设计流程"></p>
+<h3 id="2-end-1PCB设计规则总览（持续添加ing）"><a href="#2-end-1PCB设计规则总览（持续添加ing）" class="headerlink" title="2.end.1PCB设计规则总览（持续添加ing）"></a>2.end.1PCB设计规则总览（持续添加ing）</h3><ol>
+<li><p><strong>电路布局与元器件安放</strong>：</p>
+<ul>
+<li><p>电路布局是否合理？</p>
+</li>
+<li><p>元器件之间的距离是否足够？</p>
+</li>
+<li><p>元器件的放置方向是否一致？</p>
+</li>
+<li><p>是否合理安排了元器件的布局顺序？</p>
+</li>
+<li><p>是否考虑了元器件的封装形式和选择？</p>
+</li>
+<li><p>是否进行了元器件的标注和排列规范？</p>
+</li>
+<li><p>是否考虑了元器件的插拔次数和位置？</p>
+</li>
+<li><p>是否进行了元器件的冗余设计？</p>
+</li>
+<li><p>是否考虑了元器件的热管理和散热问题？</p>
+</li>
+<li><p>是否进行了元器件的可靠性分析？</p>
+</li>
+</ul>
+</li>
+<li><p><strong>信号管理：</strong></p>
+<ul>
+<li><p>是否进行了信号完整性分析？</p>
+</li>
+<li><p>是否进行了阻抗匹配设计？</p>
+</li>
+<li><p>是否进行了信号线路的优化布局和仿真验证？</p>
+</li>
+<li><p>是否考虑了电磁干扰和射频干扰的影响？</p>
+</li>
+<li><p>是否进行了电磁场模拟分析？</p>
+</li>
+<li><p>是否考虑了信号传输速率和衰减问题？</p>
+</li>
+<li><p>是否考虑了线路的阻抗匹配和信号损耗？</p>
+</li>
+<li><p>是否进行了线路的阻抗匹配设计？</p>
+</li>
+</ul>
+</li>
+<li><p><strong>电源管理：</strong></p>
+<ul>
+<li><p>是否考虑了电源的滤波和稳压？</p>
+</li>
+<li><p>是否进行了电源线和地线的分离和规范设计？</p>
+</li>
+<li><p>是否考虑了过压和过流保护的设计？</p>
+</li>
+<li><p>是否进行了电源供应的充足性和稳定性分析？</p>
+</li>
+</ul>
+</li>
+<li><p><strong>PCB工艺与环境因素：</strong></p>
+<ul>
+<li><p>是否考虑了PCB的工作环境和应用场景？</p>
+</li>
+<li><p>是否进行了PCB的加工工艺和成本分析？</p>
+</li>
+<li><p>是否进行了PCB布线的仿真验证？</p>
+</li>
+<li><p>是否考虑了PCB的防火、加固、环境友好等设计因素？</p>
+</li>
+</ul>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/Anthony-hcy">半截诗</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://anthony-hcy.github.io/2024/07/01/PCB/">http://anthony-hcy.github.io/2024/07/01/PCB/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://Anthony-hcy.github.io" target="_blank">半截诗の小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/">电子设计</a></div><div class="post_share"><div class="social-share" data-image="https://4kwallpapers.com/images/walls/thumbs_3t/17166.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/06/28/hello-world/" title="Hello World"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://4kwallpapers.com/images/walls/thumbs_3t/17166.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PCB-Technique"><span class="toc-number">1.</span> <span class="toc-text">PCB Technique</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E9%9C%80%E5%AE%9E%E6%88%98%EF%BC%8C%E7%BA%B8%E4%B8%8A%E5%BE%97%E6%9D%A5%E7%BB%88%E8%A7%89%E6%B5%85%EF%BC%8C%E7%BB%9D%E7%9F%A5%E6%AD%A4%E4%BA%8B%E8%A6%81%E8%BA%AC%E8%A1%8C%E3%80%82"><span class="toc-number">1.0.0.0.0.1.</span> <span class="toc-text">&#x3D;&#x3D;进阶需实战，纸上得来终觉浅，绝知此事要躬行。&#x3D;&#x3D;</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.1.</span> <span class="toc-text">1. 电路设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E5%8E%9F%E7%90%86%E5%9B%BE%E5%9B%9B%E8%A6%81%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">1.1 原理图四要素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E4%BB%B6%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.3.</span> <span class="toc-text">1.2 基本原件介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E7%94%B5%E9%98%BB"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.2.1 电阻</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%E7%94%B5%E5%AE%B9"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.2.2 电容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-%E7%94%B5%E6%84%9F"><span class="toc-number">1.3.3.</span> <span class="toc-text">1.2.3 电感</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-4-%E4%BA%8C%E6%9E%81%E7%AE%A1"><span class="toc-number">1.3.4.</span> <span class="toc-text">1.2.4 二极管</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-5-%E4%B8%89%E6%9E%81%E7%AE%A1"><span class="toc-number">1.3.5.</span> <span class="toc-text">1.2.5 三极管</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-6-%E5%9C%BA%E6%95%88%E5%BA%94%E7%AE%A1%EF%BC%88%E5%B0%9A%E6%9C%AA%E6%8E%8C%E6%8F%A1%EF%BC%89"><span class="toc-number">1.3.6.</span> <span class="toc-text">1.2.6 场效应管（尚未掌握）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-7-%E8%8A%AF%E7%89%87-IC"><span class="toc-number">1.3.7.</span> <span class="toc-text">1.2.7 芯片 &#x2F; IC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E6%95%B0%E6%8D%AE%E6%89%8B%E5%86%8C"><span class="toc-number">1.4.</span> <span class="toc-text">1.3 数据手册</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E7%94%B5%E8%B7%AF%E5%8E%9F%E7%90%86%E5%9B%BE%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.5.</span> <span class="toc-text">1.4 电路原理图设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A0%87%E7%AD%BE"><span class="toc-number">1.5.1.</span> <span class="toc-text">网络标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-number">1.5.2.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">1.5.3.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">1.5.4.</span> <span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-PCB%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.6.</span> <span class="toc-text">2. PCB设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1PCB-%E7%BB%84%E6%88%90"><span class="toc-number">1.6.1.</span> <span class="toc-text">2.1PCB 组成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1%E9%93%BA%E9%93%9C"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">2.1.1铺铜</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2%E8%BF%87%E5%AD%94"><span class="toc-number">1.6.1.2.</span> <span class="toc-text">2.1.2过孔</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3%E7%84%8A%E7%9B%98"><span class="toc-number">1.6.1.3.</span> <span class="toc-text">2.1.3焊盘</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-4%E4%B8%9D%E5%8D%B0"><span class="toc-number">1.6.1.4.</span> <span class="toc-text">2.1.4丝印</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-5%E9%98%BB%E7%84%8A"><span class="toc-number">1.6.1.5.</span> <span class="toc-text">2.1.5阻焊</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2PCB%E7%BB%93%E6%9E%84"><span class="toc-number">1.6.2.</span> <span class="toc-text">2.2PCB结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-PCB%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B"><span class="toc-number">1.6.3.</span> <span class="toc-text">2.3  PCB设计流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-end-1PCB%E8%AE%BE%E8%AE%A1%E8%A7%84%E5%88%99%E6%80%BB%E8%A7%88%EF%BC%88%E6%8C%81%E7%BB%AD%E6%B7%BB%E5%8A%A0ing%EF%BC%89"><span class="toc-number">1.6.4.</span> <span class="toc-text">2.end.1PCB设计规则总览（持续添加ing）</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="ft"><div class="ft-item-1"><div class="t-top"><div class="t-t-l"><p class="ft-t t-l-t">格言🧬</p><div class="bg-ad"><div>再看看那个光点，它就在这里，这是家园，这是我们 —— 你所爱的每一个人，你认识的一个人，你听说过的每一个人，曾经有过的每一个人，都在它上面度过他们的一生✨</div><div class="btn-xz-box"><a class="btn-xz" target="_blank" rel="noopener" href="https://stellarium.org/">点击开启星辰之旅</a></div></div></div><div class="t-t-r"><p class="ft-t t-l-t">猜你想看💡</p><ul class="ft-links"><li><a href="/posts/eec9786.html">魔改指南</a><a href="/box/nav/">网址导航</a></li><li><a href="/social/link/">我的朋友</a><a href="/comments/">留点什么</a></li><li><a href="/personal/about/">关于作者</a><a href="/archives/">文章归档</a></li><li><a href="/categories/">文章分类</a><a href="/tags/">文章标签</a></li><li><a href="/box/Gallery/">我的画廊</a><a href="/personal/bb/">我的唠叨</a></li><li><a href="/site/time/">建设进程</a><a href="/site/census/">网站统计</a></li></ul></div></div></div><div class="ft-item-2"><p class="ft-t">推荐友链⌛</p><div class="ft-img-group"><div class="img-group-item"><a target="_blank" rel="noopener" href="https://www.fomal.cc/" title="Fomalhaut🥝"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/60e5d4e39da7c077.webp" alt=""/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://tzy1997.com/" title="唐志远の博客"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/4ab83cdce942463b.jpg" alt=""/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://akilar.top/" title="Akilarの糖果屋"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/6bf1ed05796db59c.jpg" alt=""/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://butterfly.js.org/" title="Butterfly"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/64cc6a7d508026e1.png" alt=""/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://anzhiy.cn/" title="安知鱼"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/1b33fef8f5fb7e63.jpg" alt=""/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://www.acozycotage.net/" title="Acozycotage"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/6a6fe6ebfd19c465.jpg" alt=""/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://cdn.netdun.net/" title="网盾星球"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/70dee3f9d1ca10f3.webp" alt=""/></a></div><div class="img-group-item"><a href="javascript:void(0)" title="广告位招租"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/65307a5828af6790.webp" alt=""/></a></div></div></div></div><div class="copyright"><span><b>&copy;2023 - 2024</b></span><span><b>&nbsp;&nbsp;By 半截诗</b></span></div><div class="footer_custom_text">此情可待成追忆？只是当时已惘然</div><div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" title="博客框架为Hexo_v6.3.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sourcebucket.s3.ladydaily.com/badge/Frame-Hexo-blue.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" title="主题版本Butterfly_v4.3.1"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sourcebucket.s3.ladydaily.com/badge/Theme-Butterfly-6513df.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" title="本站采用多线部署，主线路托管于Vercel"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sourcebucket.s3.ladydaily.com/badge/Hosted-Vercel-brightgreen.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://user.51.la/" style="margin-inline:5px" title="本站数据分析得益于51la技术支持"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sourcebucket.s3.ladydaily.com/badge/Analytics-51la-3db1eb.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://icp.gov.moe/?keyword=20226665" style="margin-inline:5px" title="本站已加入萌ICP豪华套餐，萌ICP备20226665号"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sourcebucket.s3.ladydaily.com/badge/萌ICP备-20226665-fe1384.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://bitiful.dogecast.com/buckets" style="margin-inline:5px" title="本网站经Service Worker分流至缤纷云对象存储"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src=" https://sourcebucket.s3.ladydaily.com/badge/Bucket-缤纷云-9c62da.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://www.netdun.net/" style="margin-inline:5px" title="本站使用网盾星球提供CDN加速与防护"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sourcebucket.s3.ladydaily.com/badge/CDN-网盾星球-fff2cc.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" title="本网站源码由Github提供存储仓库"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src=" https://sourcebucket.s3.ladydaily.com/badge/Source-Github-d021d6.svg" alt=""/></a></p></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"></a><svg width="25" height="25" viewBox="0 0 1024 1024"></svg><use id="modeicon" xlink:href="#icon-moon"></use><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button class="share" type="button" title="右键模式" onclick="changeMouseMode()"><i class="fas fa-mouses"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部">   <span class="scroll-percent"> </span><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="fa fa-search"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()"><i class="fa fa-copy"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="#post-comment"><i class="fas fa-comment"></i><span>空降评论</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:randomPost()"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:switchNightMode();"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="/personal/about/"><i class="fa fa-info-circle"></i><span>关于博客</span></a><a class="rightMenu-item" href="javascript:toggleWinbox();"><i class="fas fa-cog"></i><span>美化设置</span></a><a class="rightMenu-item" href="javascript:rmf.fullScreen();"><i class="fas fa-expand"></i><span>切换全屏</span></a><a class="rightMenu-item" href="javascript:window.print();"><i class="fa-solid fa-print"></i><span>打印页面</span></a></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script defer src="/js/cursor.js"></script><div id="aplayer-oSEOhviA" class="aplayer no-destroy" data-id="2348674204" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-mode="random" data-autoplay="false" data-listmaxheight="340px" data-order="random" data-preload="auto" data-theme="#2980b9" data-volume="0.6" mutex="true"></div><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/cat.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script defer type="text/javascript" src="https://cdn1.tianli0.top/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script><script defer src="/js/lunar.js"></script><script defer src="/js/day.js"></script><script src="/js/sun_moon.js" async></script><script type="text/javascript" src="https://cdn1.tianli0.top/npm/jquery@latest/dist/jquery.min.js"></script><script type="text/javascript" src="/js/rightmenu.js"></script><script async src="https://npm.elemecdn.com/tzy-blog/lib/js/other/sakura.js"></script><script defer src="/js/runtime.js"></script><script async src="/js/fps.js"></script><script async src="/js/title.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><a class="magnet_link_more"  href="http://Anthony-hcy.github.io/tags" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(33.333333333333336% - 5px);background: #e9e9e9;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: var(--text-bg-hover)}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
