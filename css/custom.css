@@ -1,6 +1,6 @@
 /* 页脚与头图透明 -----------------------------------------------------------------------------------*/
 #footer {
-    background: transparent !important;
+    background: rgba(0, 0, 0, .25) !important;
   }
   #page-header {
     background: transparent !important;
@@ -340,7 +340,7 @@ h6::before {
   max-width: 1200px;
   margin: 0 auto 12px;
   display: flex;
-  color: rgb(255 255 255 / 80%) !important;
+  color: rgb(255, 255, 255) !important;
   text-align: left;
   flex-wrap: wrap;
 }
@@ -644,13 +644,13 @@ h6::before {
 
 /* 个人信息卡片背景图 */
 [data-theme="light"] #aside-content > .card-widget.card-info {
-  background-image: url(https://source.fomal.cc/img/fj2.webp);
+  background-image: url(https://sourcebucket.s3.bitiful.net/img/springBg.png);
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-size: 100%;
 }
 [data-theme="dark"] #aside-content > .card-widget.card-info {
-  background-image: url(https://source.fomal.cc/img/fj2.webp);
+  background-image: url(https://sourcebucket.s3.bitiful.net/img/aurora.webp);
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-size: 100%;
@@ -825,3 +825,6 @@ h6::before {
   color: #fff;
   background-color: var(--theme-color);
 }
+
+
+
