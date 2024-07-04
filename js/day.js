@@ -53,6 +53,12 @@ if (m == 1 && dd == 1) {//元旦节
         sessionStorage.setItem("isPopupWindow", "1");
     }
 }
+if (m == 1 && dd == 23) {//生日
+    if (sessionStorage.getItem("isPopupWindow") != "1") {
+        Swal.fire("祝站长生日快乐！你也要开心！🎉");
+        sessionStorage.setItem("isPopupWindow", "1");
+    }
+}
 if (m == 3 && dd == 8) {//妇女节
     if (sessionStorage.getItem("isPopupWindow") != "1") {
         Swal.fire("各位女神们，妇女节快乐！👩");

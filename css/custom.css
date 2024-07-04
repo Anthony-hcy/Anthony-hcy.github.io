@@ -29,14 +29,33 @@
     left: 50% !important;
     transform: translateX(-50%) !important;
   }
+  #nav .menus_items .menus_item {
+    padding: 0 0 0 8px !important;
+  }
   /* 子菜单横向展示 */
   #nav .menus_items .menus_item:hover .menus_item_child {
     display: flex !important;
   }
   /* 这里的2是代表导航栏的第2个元素，即有子菜单的元素，可以按自己需求修改 */
   .menus_items .menus_item:nth-child(2) .menus_item_child {
-    left: -125px;
+    left: -95px;
   }
+  .menus_items .menus_item:nth-child(3) .menus_item_child {
+    left: -103px;
+  }
+  .menus_items .menus_item:nth-child(4) .menus_item_child {
+    left: -102px;
+  }
+  .menus_items .menus_item:nth-child(5) .menus_item_child {
+    left: -117px;
+  }
+  .menus_items .menus_item:nth-child(6) .menus_item_child {
+    left: -133px;
+  }
+  .menus_items .menus_item:nth-child(7) .menus_item_child {
+    left: -105px;
+  }
+  
 
   /* 鼠标样式//---------------------------------------------------------------------------------------------- */
 #cursor {
@@ -97,6 +116,7 @@
   backdrop-filter: var(--backdrop-filter);
   border-radius: 18px;
   border: var(--border-style);
+  padding: 20px;
 }
 
 /* 文章页、归档页、普通页面 */
@@ -111,12 +131,13 @@ div#archive {
 
 /* 导航栏 */
 #page-header.nav-fixed #nav {
-  background: rgba(255, 255, 255, 0.75);
+  background: linear-gradient(60deg, #ffd7e4 0, #c8f1ff 93%);
+  opacity: 0.95;
   backdrop-filter: var(--backdrop-filter);
 }
 
 [data-theme="dark"] #page-header.nav-fixed #nav {
-  background: rgba(0, 0, 0, 0.7) !important;
+  background: rgba(0, 0, 0, 0.95) !important;
 }
 
 /* 夜间模式遮罩 */
@@ -128,7 +149,12 @@ div#archive {
   background: var(--trans-dark);
 }
 
-
+/* 白天模式头图与页脚遮罩 */
+[data-theme="light"] #page-header:before,
+[data-theme="light"] #footer::before {
+  background-color: rgba(0, 0, 0, 0.18) !important;
+  z-index: -3;
+}
 /* 夜间模式页脚页头遮罩透明 */
 [data-theme="dark"] #footer::before {
   background: transparent !important;
@@ -823,8 +849,392 @@ h6::before {
 
 ::-moz-selection {
   color: #fff;
-  background-color: var(--theme-color);
+  background-color: var(--theme-color) !important;
 }
 
+
+
+/* 以下是添加的---------------------------------------------------------------------------------------------- */
+/* root伪类指定全局颜色 */
+:root {
+  --blue-custom: #5ea6e5;
+  --loading-color: rgba(207, 246, 247, 0.92);
+  --border-color: #c9c9c9;
+  --color-red: rgb(241, 71, 71);
+  --color-orange: rgb(241, 162, 71);
+  --color-yellow: rgb(241, 238, 71);
+  --color-purple: rgb(179, 71, 241);
+  --color-blue: rgb(102, 204, 255);
+  --color-gray: rgb(226, 226, 226);
+  --color-green: rgb(57, 197, 187);
+  --color-whitegray: rgb(241, 241, 241);
+  --color-pink: rgb(237, 112, 155);
+  --color-black: rgb(0, 0, 0);
+  --color-darkblue: rgb(97, 100, 159);
+  --color-heoblue: rgb(66, 90, 239);
+  --btn-bg: var(--theme-color) !important;
+  --scrollbar-color: var(--theme-color) !important;
+  --border-style: 1px solid rgba(169, 169, 169, 0.7);
+  /* 代码框行数背景色 */
+  --hlnumber-bg: #282c34;
+  /* 代码框顶部背景色 */
+  --hltools-bg: #1c1c1c;
+  /* 代码框背景色 */
+  --hl-bg: #282c34;
+}
+
+/* 代码框底部滚动条 */
+#article-container figure.highlight > ::-webkit-scrollbar-thumb {
+  background-color: #35393f !important;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 75%,
+    transparent
+  ) !important;
+  border-radius: 2em !important;
+}
+
+/* 字体引入 */
+@font-face {
+  font-family: YSHST;
+  src: url(https://data-static.netdun.net/Fomalhaut/fonts/优设好身体.woff2);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: MiSans;
+  src: url(https://data-static.netdun.net/Fomalhaut/fonts/MiSans.woff2);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: HYTMR;
+  src: url(https://data-static.netdun.net/Fomalhaut/fonts/HYTangMeiRen55W.woff2);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: LXGW;
+  src: url(https://data-static.netdun.net/Fomalhaut/fonts/霞鹜文楷.woff2);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: TTQHB;
+  src: url(https://data-static.netdun.net/Fomalhaut/fonts/甜甜圈海报字体.woff2);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Consolas_1;
+  src: url(https://data-static.netdun.net/Fomalhaut/fonts/Consolas.woff2);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: ZhuZiAWan;
+  src: url(https://data-static.netdun.net/Fomalhaut/fonts/ZhuZiAWan2.woff2);
+  font-display: swap;
+}
+
+/* 特定部件字体调用 */
+div#menus {
+  font-weight: bold !important;
+}
+h1#site-title {
+  font-size: 3em !important;
+  font-weight: bold !important;
+}
+a.article-title,
+a.blog-slider__title,
+a.categoryBar-list-link,
+h1.post-title {
+  font-weight: bold !important;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 3em;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zhongbiao::before {
+  color: #f7c768;
+}
+
+/* 解决artitalk的图标问题 */
+#uploadSource > svg {
+  width: 1.19em;
+  height: 1.5em;
+}
+
+/* 滚动显示的标题居中 */
+center#name-container {
+  position: absolute !important;
+  width: fit-content !important;
+  left: 42% !important;
+  /* transform: translateX(-50%) !important; */
+  /* transform: translateY(-100%) !important; */
+}
+@media screen and (max-width: 768px) {
+  center#name-container {
+    display: none;
+  }
+}
+
+/* 置顶滚动圆角 */
+.blog-slider__img img {
+  border-radius: 20px !important;
+}
+
+/* 评论框  */
+.vwrap {
+  box-shadow: 2px 2px 5px #bbb;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 30px;
+  margin: 30px 0px 30px 0px;
+}
+
+/* 设置评论框 */
+.vcard {
+  box-shadow: 2px 2px 5px #bbb;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 30px;
+  margin: 30px 0px 0px 0px;
+}
+
+/* 超链接样式 参考heo */
+#article-container
+  a:not(.fancybox, .imgbox, .swf, .box, .pimgbox, .magnet_link) {
+  text-decoration: none;
+  /* border-bottom: 2px solid var(--theme-color) */
+  /* border-radius: 4px 4px 0 0 */
+}
+
+#article-container
+  a:not(
+    .fancybox,
+    .imgbox,
+    .swf,
+    .box,
+    .pimgbox,
+    .magnet_link,
+    .gallery_link
+  ):hover {
+  text-decoration: none;
+  color: #fefefe;
+  background: var(--text-bg-hover) !important;
+  border-radius: 4px;
+  box-shadow: 0 8px 12px -3px #4259ef23;
+  padding: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+#article-container #hpp_talk p img {
+  display: inline;
+}
+
+
+/* 代码框主题 */
+#article-container figure.highlight {
+  border-radius: 10px;
+}
+[data-theme="dark"] #article-container figure.highlight {
+  border: 0.5px solid #404040;
+}
+
+/* twikoo评论美化 */
+/* 自定义twikoo评论输入框高度 */
+#twikoo .el-textarea textarea {
+  min-height: 120px !important;
+  background-size: 90px;
+}
+
+/* 自定义表情优化 */
+#twikoo .OwO-body {
+  max-width: 100% !important;
+}
+/* 选择某个框 #twikoo .OwO .OwO-body .OwO-items:nth-child(1) */
+#twikoo .OwO .OwO-body .OwO-items {
+  max-height: 250px !important;
+}
+
+.OwO .OwO-body .OwO-items-image .OwO-item {
+  max-width: calc(9% - 10px);
+  box-sizing: content-box;
+}
+.OwO .OwO-body .OwO-items-image .OwO-item[title|="Heybox"],
+.OwO .OwO-body .OwO-items-image .OwO-item[title|="Tieba"],
+.OwO .OwO-body .OwO-items-show .OwO-item[title*="bilibili"] {
+  max-width: calc(7% - 10px) !important;
+  box-sizing: content-box;
+}
+
+
+#twikoo .OwO-items li img {
+  width: 100% !important;
+}
+
+.tk-comment .vemoji[alt|="Menhera"],
+.tk-comment .tk-owo-emotion[alt*="Menhera"],
+.tk-comment .vemoji[alt|="Snow"],
+.tk-comment .tk-owo-emotion[alt*="Snow"],
+.tk-comment .vemoji[alt|="Sweetie"],
+.tk-comment .tk-owo-emotion[alt*="Sweetie"],
+.tk-comment .vemoji[alt|="Tsuri"],
+.tk-comment .tk-owo-emotion[alt*="Tsuri"],
+.tk-comment .vemoji[alt|="Yurui"],
+.tk-comment .tk-owo-emotion[alt*="Yurui"] {
+  max-width: 120px !important;
+  max-height: 120px !important;
+  width: 120px;
+  margin: 8px 1px;
+  display: block !important;
+}
+
+/* 手机端适配 */
+@media screen and (max-width: 768px) {
+  .tk-comment .vemoji[alt|="Menhera"],
+  .tk-comment .tk-owo-emotion[alt*="Menhera"],
+  .tk-comment .vemoji[alt|="Snow"],
+  .tk-comment .tk-owo-emotion[alt*="Snow"],
+  .tk-comment .vemoji[alt|="Sweetie"],
+  .tk-comment .tk-owo-emotion[alt*="Sweetie"],
+  .tk-comment .vemoji[alt|="Tsuri"],
+  .tk-comment .tk-owo-emotion[alt*="Tsuri"],
+  .tk-comment .vemoji[alt|="Yurui"],
+  .tk-comment .tk-owo-emotion[alt*="Yurui"] {
+    max-width: calc(100% - 30px) !important;
+    max-height: calc(100% - 30px) !important;
+  }
+  .OwO .OwO-body .OwO-items-image .OwO-item[title*="Menhera"],
+  .OwO .OwO-body .OwO-items-image .OwO-item[title*="Snow"],
+  .OwO .OwO-body .OwO-items-image .OwO-item[title*="Sweetie"],
+  .OwO .OwO-body .OwO-items-image .OwO-item[title*="Tsuri"],
+  .OwO .OwO-body .OwO-items-image .OwO-item[title*="Yurui"] {
+    max-width: calc(33% - 10px);
+    box-sizing: border-box;
+  }
+  .OwO .OwO-body .OwO-items-image .OwO-item[title*="Heybox"],
+  .OwO .OwO-body .OwO-items-image .OwO-item[title*="bilibili"],
+  .OwO .OwO-body .OwO-items-image .OwO-item[title*="Tieba"],
+  .OwO .OwO-body .OwO-items-image .OwO-item[title*="QQ"] {
+    max-width: calc(18% - 10px) !important;
+    box-sizing: content-box;
+  }
+}
+
+/* 右下角闭眼 */
+.el-textarea__inner {
+  background-image: url(/assets/open.webp) !important;
+}
+.el-textarea__inner:focus {
+  background-image: url(/assets/close.webp) !important;
+}
+
+
+/* 调整楼中楼样式 ，整体左移，贴合气泡化效果 */
+.tk-replies {
+  left: -70px;
+  width: calc(100% + 70px);
+}
+/* 头像宽度调整 rem单位与全局字体大小挂钩，需配合自己情况调整大小以保证头像显示完整*/
+.tk-replies .tk-avatar {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+.tk-replies .tk-avatar img {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+/* 回复框左移，避免窄屏时出框 */
+.tk-comments-container .tk-submit {
+  position: relative;
+  left: -70px;
+}
+/* 评论块气泡化修改 */
+.tk-content {
+  /* linear-gradient(to bottom, #2193b0, #6dd5ed); */
+  background: linear-gradient(
+    to top,
+    #4568dc,
+    #b06ab3
+  ); /*默认模式访客气泡配色*/
+  padding: 10px;
+  color: #fff; /*默认模式访客气泡字体配色*/
+  border-radius: 10px;
+  font-size: 16px !important;
+  width: fit-content;
+  max-width: 100%;
+  position: relative !important;
+  overflow: visible !important;
+  max-height: none !important;
+}
+/* 修复图片出框 */
+.tk-content img {
+  max-width: 100% !important;
+}
+/* 修复过长文本出框 */
+.tk-content pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.tk-content a {
+  color: #eeecaa; /*默认模式超链接配色*/
+}
+.tk-content::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 20px;
+  left: -13px;
+  border-top: 2px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 15px solid transparent; /*默认模式访客气泡小三角配色*/
+  border-left: 0px solid transparent;
+}
+.tk-master .tk-content {
+  background: linear-gradient(
+    to top,
+    #43cea2,
+    #185a9d
+  ); /*默认模式博主气泡配色*/
+  color: #fff; /*默认模式博主气泡字体配色*/
+  width: fit-content;
+  max-width: 100%;
+}
+.tk-master .tk-content a {
+  color: #eeecaa;
+}
+.tk-master .tk-content::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 20px;
+  left: -13px;
+  border-top: 2px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 15px solid transparent; /*默认模式博主气泡小三角配色*/
+  border-left: 0px solid transparent;
+}
+.tk-row[data-v-d82ce9a0] {
+  max-width: 100%;
+  width: fit-content;
+}
+.tk-avatar {
+  border-radius: 50%;
+  margin-top: 10px;
+}
 
 
