@@ -919,9 +919,14 @@ h6::before {
 }
 
 @font-face {
-  font-family: LXGW;
-  src: url(https://data-static.netdun.net/Fomalhaut/fonts/霞鹜文楷.woff2);
-  font-display: swap;
+  font-family: 'LXGW';
+  src: url(/font/霞鹜文楷.woff2);
+  /* 定义加粗样式(加粗多少) */
+  font-weight: normal;
+  /* 定义字体样式(斜体/非斜体) */
+  font-style: normal;
+  /* 定义显示样式 */
+  font-display: block;
 }
 
 @font-face {
@@ -931,9 +936,14 @@ h6::before {
 }
 
 @font-face {
-  font-family: Consolas_1;
-  src: url(https://data-static.netdun.net/Fomalhaut/fonts/Consolas.woff2);
-  font-display: swap;
+  font-family: 'Consolas';
+  src: url(/font/Consolas.woff2);
+  /* 定义加粗样式(加粗多少) */
+  font-weight: normal;
+  /* 定义字体样式(斜体/非斜体) */
+  font-style: normal;
+  /* 定义显示样式 */
+  font-display: block;
 }
 
 @font-face {
