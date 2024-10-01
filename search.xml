@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>How to link</title>
+      <link href="/2024/09/15/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E6%8E%A5/"/>
+      <url>/2024/09/15/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E6%8E%A5/</url>
+      
+        <content type="html"><![CDATA[<h4 id="Hexo博客新手任务学习分支线："><a href="#Hexo博客新手任务学习分支线：" class="headerlink" title="Hexo博客新手任务学习分支线："></a>Hexo博客新手任务学习分支线：</h4><h3 id="主线任务1："><a href="#主线任务1：" class="headerlink" title="主线任务1："></a>主线任务1：</h3><p>根据博客搭建教程完成博客的本地搭建，配合github完成线上部署。</p><p>教程链接：<a href="https://akilar.top/posts/6ef63e2d/">https://akilar.top/posts/6ef63e2d/</a></p><p>任务难度：⭐⭐⭐</p><h3 id="支线任务1："><a href="#支线任务1：" class="headerlink" title="支线任务1："></a>支线任务1：</h3><p>挑选一款合适的主题，推荐使用Butterfly主题，跟随主题文档完成基本配置。</p><p>教程链接：<a href="https://butterfly.js.org/">https://butterfly.js.org/</a></p><p>任务难度：⭐⭐⭐⭐⭐</p><h3 id="主线任务2："><a href="#主线任务2：" class="headerlink" title="主线任务2："></a>主线任务2：</h3><p>在根目录[Blogroot]下打开终端,使用 hexo new post &lt;标题&gt; 新建一篇文章。<br>可以在[Blogroot]&#x2F;source&#x2F;_post&#x2F;目录下找到新建的文章。<br>可以通过修改[Blogroot]&#x2F;scaffolds&#x2F;post.md的模板内容来改变默认生成的文章格式。</p><p>教程链接：<a href="https://hexo.io/zh-cn/docs/writing">https://hexo.io/zh-cn/docs/writing</a></p><p>任务难度：⭐</p><h3 id="支线任务2："><a href="#支线任务2：" class="headerlink" title="支线任务2："></a>支线任务2：</h3><p>学习markdown基本语法，使用markdown语法编写博客。</p><p>教程链接：<a href="https://guides.github.com/features/mastering-markdown/">https://guides.github.com/features/mastering-markdown/</a></p><p>任务难度：⭐⭐</p><h3 id="支线任务3："><a href="#支线任务3：" class="headerlink" title="支线任务3："></a>支线任务3：</h3><p>熟练掌握markdown基本语法后，可以使用外挂标签丰富博客文章的格式。</p><p>教程链接：<a href="https://akilar.top/posts/615e2dec/">https://akilar.top/posts/615e2dec/</a></p><p>任务难度：⭐⭐</p><h3 id="主线任务3："><a href="#主线任务3：" class="headerlink" title="主线任务3："></a>主线任务3：</h3><p>学习github action，将博客源码托管至github，并通过github action完成线上部署。</p><p>教程链接：<a href="https://akilar.top/posts/f752c86d/">https://akilar.top/posts/f752c86d/</a></p><p>任务难度：⭐⭐⭐⭐</p><h3 id="支线任务4："><a href="#支线任务4：" class="headerlink" title="支线任务4："></a>支线任务4：</h3><p>使用Vercel部署博客网页，进一步提高访问速度</p><p>教程链接：<a href="https://akilar.top/posts/812734f8/">https://akilar.top/posts/812734f8/</a></p><p>任务难度：⭐</p><h3 id="博客优化副本任务："><a href="#博客优化副本任务：" class="headerlink" title="博客优化副本任务："></a>博客优化副本任务：</h3><p>按照糖果屋优化日记的教程索引，完成博客基本优化</p><p>教程链接：<a href="https://akilar.top/posts/7c16c4bb/">https://akilar.top/posts/7c16c4bb/</a></p><p>任务难度：⭐⭐⭐⭐⭐</p><h3 id="博客美化副本任务："><a href="#博客美化副本任务：" class="headerlink" title="博客美化副本任务："></a>博客美化副本任务：</h3><p>按照糖果屋美化日记的教程索引，挑选喜爱的组件对博客进行自定义美化。</p><p>教程链接：<a href="https://akilar.top/posts/f99b208/">https://akilar.top/posts/f99b208/</a></p><p>任务难度：难度不详，遇强则强</p><p>Q:</p><p>比如我建了一个叫“网址导航”的页面，我想在里面显示我加的网址（然后希望显示是和link的一样，因为我link的样式换了），然后link的页面叫“链接”，和“网址导航”是不同的页面</p><p>A:</p><p>难倒是不难。你找到flink.pug文件，复制一个，重命名一下，比如改成dlink.pug，然后在里面找到data.link这个关键词，改成data.dlink，然后找到page.pug，模仿里面的代码结构把dlink.pug加进去。然后hexo new page dlink，和友链差不多，写type：“dlink”，到data&#x2F;目录下新建dlink.yml，友链咋写格式，这个就咋写。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>这是八月</title>
       <link href="/2024/08/01/%E6%97%A5%E8%AE%B0-2024-8-01/"/>
       <url>/2024/08/01/%E6%97%A5%E8%AE%B0-2024-8-01/</url>
